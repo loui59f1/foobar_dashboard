@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+body {
+  padding: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  border: 1px solid #0a0a0a;
+  padding: 15px 25px;
+  margin-bottom: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 2em;
+  margin-bottom: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.KPI {
+  border: 1px solid #0a0a0a;
+  padding: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.Bartenders {
+  border: 1px solid #0a0a0a;
+  padding: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Orders {
+  border: 1px solid #0a0a0a;
+  padding: 25px;
+}
+
+.Storage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.StorageBeer {
+  border: 1px solid #0a0a0a;
+  padding: 25px;
+}
+
+.StorageTapBeer {
+  border: 1px solid #0a0a0a;
+  padding: 25px;
 }
