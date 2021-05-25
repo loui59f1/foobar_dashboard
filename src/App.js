@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     getData("https://dreaming-of-foobar.herokuapp.com");
-  }, []);
+  });
 
   function getData(url) {
     console.log("test")
