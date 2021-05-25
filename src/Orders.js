@@ -1,23 +1,41 @@
+import React, { useState } from "react";
+
 export default function Orders({ queue }) {
-  const orderList = queue.map((order) => <Order order={order} />);
+  const [orderLength, setOrderLength] = useState(0);
 
   return (
     <div className="Orders">
       <h1>Incoming orders</h1>
-      <div className="OrderList">{orderList}</div>
-    </div>
-  );
-}
+      {queue.map((orders) => {
+        const copyResult = {};
+        orders.order.map(function (beer) {
+          copyResult[beer] = (copyResult[beer] || 0) + 1;
+          return copyResult;
+        });
 
-function Order({ order }) {
-  // Hvordan får vi håndteret flere af samme øl?
-  // Ex. 2 x Mowintime, 1 x El Hefe don no
+        function checkLength() {
+          setOrderLength(queue.length);
+        }
 
-  return (
-    <div className="Order">
-      <h3>Order id: {order.id}</h3>
-      <p>{order.order}</p>
-      <p>Table number</p>
+        orderLength !== queue.length ? checkLength() : console.log("no");
+
+        return (
+          <div className="order-card" key={orders.id}>
+            <div>
+              <h3 className="order-number"> {`ID #${orders.id}`}</h3>
+            </div>
+            <ul>
+              {Object.entries(copyResult).map(([key, value]) => {
+                return (
+                  <li key={orders.id + Math.random()} className="order-beer">
+                    {value === 1 ? "" : `${value}`} {key}{" "}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 }
