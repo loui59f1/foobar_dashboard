@@ -1,3 +1,6 @@
+import React from 'react';
+import { VictoryPie } from 'victory';
+
 export default function Storage({ storage, taps }) {
 
     const storageList = storage.map((beer) => <StorageBeer beer={beer} />);
@@ -35,6 +38,29 @@ function StorageTapBeer({ tap }) {
             <h3>{tap.beer}</h3>
             <p>Level {tap.level} out of {tap.capacity}</p>
             <p>Percentage: {percentage}%</p>
+            <DiagramStorageData percentage={percentage} />
         </div>
     );
+}
+
+class DiagramStorageData extends React.Component {
+
+    render() {
+        return (
+            <div className="pie">
+                <text className="percentage_text" textAnchor="middle" >
+                    {this.props.percentage}%
+                </text>
+                <VictoryPie
+                    padAngle={0}
+                    // used to hide labels
+                    labelComponent={<span />}
+                    innerRadius={70}
+                    width={200} height={200}
+                    data={[{ 'key': "", 'y': this.props.percentage }, { 'key': "", 'y': (100 - this.props.percentage) }]}
+                    colorScale={["#19B3A6", "#EEEEEE"]}
+                />
+            </div>
+        )
+    }
 }
