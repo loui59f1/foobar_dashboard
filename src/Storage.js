@@ -11,12 +11,14 @@ export default function Storage({ storage, taps }) {
     return (
         <div className="Storage">
             <div className="StorageList">
-                <h1>Storage Beer</h1>
+                <h1>Storage</h1>
                 {storageList}
             </div>
             <div className="TabList">
-                <h1>Tap Beer</h1>
-                {tapList}
+                <h1>Taps</h1>
+                <div className="taplist">
+                    {tapList}
+                </div>
             </div>
         </div>
     );
@@ -36,8 +38,6 @@ function StorageTapBeer({ tap }) {
     return (
         <div className="StorageTapBeer">
             <h3>{tap.beer}</h3>
-            <p>Level {tap.level} out of {tap.capacity}</p>
-            <p>Percentage: {percentage}%</p>
             <DiagramStorageData percentage={percentage} />
         </div>
     );
