@@ -29,10 +29,12 @@ function StorageBeer({ beer }) {
 }
 
 function StorageTapBeer({ tap }) {
+    const percentage = (tap.level * 100) / tap.capacity;
     return (
         <div className="StorageTapBeer">
             <h3>{tap.beer}</h3>
             <p>Level {tap.level} out of {tap.capacity}</p>
+            <p>Percentage: {percentage}%</p>
         </div>
     );
 }
