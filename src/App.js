@@ -7,70 +7,98 @@ import KPINumbers from "./KPI.js";
 import Orders from "./Orders.js";
 import Bartenders from "./Bartenders.js";
 import Storage from "./Storage.js";
-// import prices from "./prices.json";
+import prices from "./prices.json";
 
 function App() {
 
   // Get data
   const [foobar, setFoobar] = useState({ storage: [], taps: [], queue: [], bartenders: [], bar: [] });
-  // const [totalSales, setTotalSales] = useState();
+  // const [beerTypes, setBeerTypes] = useState({});
+  // const [totalSales, setTotalSales] = useState("0");
 
-  // useEffect(() => {
-  //   getData("https://dreaming-of-foobar.herokuapp.com");
-  // }, []);
+  // useFetch("https://dreaming-of-foobar.herokuapp.com");
 
-  // function getData(url) {
-
-  //   fetch(url)
-  //     .then((resp) => resp.json())
-  //     .then((json) => {
-
+  // function useFetch(url) {
+  //   useEffect(() => {
+  //     async function fetchFromAPI() {
+  //       console.log("fetching data")
+  //       const json = await (await fetch(url)).json();
   //       setFoobar(json);
+  //     }
+  //     fetchFromAPI();
+  //   }, [url]);
 
-  //       //tjekker hvert andet sekund
-  //       setTimeout(() => {
-  //         getData(url);
-  //       }, 5000);
-  //     });
-  // }
+  //   return foobar;
+  // };
 
-  useFetch("https://dreaming-of-foobar.herokuapp.com");
 
-  function useFetch(url) {
-    useEffect(() => {
-      async function fetchFromAPI() {
-        const json = await (await fetch(url)).json();
+
+  useEffect(() => {
+    getData("https://dreaming-of-foobar.herokuapp.com");
+  }, []);
+
+  function getData(url) {
+
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((json) => {
+
         setFoobar(json);
-      }
-      fetchFromAPI()
-    }, [url]);
-
-    return foobar;
-  };
-
+        //tjekker hvert andet sekund
+        setTimeout(() => {
+          getData(url);
+        }, 5000);
+      });
+  }
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
-  // const orders = foobar.queue.map(beer => beer.order);
+  //const orders = foobar.queue.map(beer => beer.order);
+
   // console.log(orders);
 
+  const allBeer = [];
+  const duplicatesResult = {};
 
+  foobar.queue.forEach((orders) => {
+    orders.order.map((beer) => {
+      allBeer.push(beer);
 
-  // Array med alle priser lagt sammen - brug noget ala det her
-  // const totalArr = basket.map((beer) => {
+      return allBeer;
+    });
+  });
 
-  //   const orderTotalPrice = beer.amount * beer.product.price;
+  allBeer.map((beer) => {
+    duplicatesResult[beer] = (duplicatesResult[beer] || 0) + 1;
+    return duplicatesResult;
+  });
 
-  //   return orderTotalPrice;
-  // });
+  const obj = Object.entries(duplicatesResult).map(([key, value]) => {
+    return { value, name: key };
+  });
 
-  //const beersFromStorage = foobar.storage.map(beer => beer.name);
+  const allOrders = obj.map((order) => {
+    //laver nyt object. Match mellem names
+    const priceObject = prices.find((item) => item.name === order.name);
+    //opretter en egenskab til beer der hedder pris
+    order.price = priceObject.price * order.value;
+    return order;
+  });
+
+  const allOrderPrices = allOrders.map(beer => beer.price);
+
+  const totalAmount = allOrderPrices.reduce(
+    (previousScore, currentScore, index) => previousScore + currentScore,
+    0);
+
+  // Beers served today
+
 
 
   return (
     <div>
       <Header bar={foobar.bar} />
       <div className="Dashboard">
-        <KPINumbers queue={foobar.queue} />
+        <KPINumbers totalAmount={totalAmount} queue={foobar.queue} />
         <Orders queue={foobar.queue} />
         <Bartenders bartenders={foobar.bartenders} />
       </div>

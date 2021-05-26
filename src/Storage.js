@@ -14,6 +14,12 @@ export default function Storage({ storage, taps }) {
                 <h1>Storage</h1>
                 {storageList}
             </div>
+            <div className="StorageList">
+                <h1>Extra</h1>
+                <div className="extracolumn">
+
+                </div>
+            </div>
             <div className="TabList">
                 <h1>Taps</h1>
                 <div className="taplist">
@@ -38,8 +44,8 @@ function StorageBeer({ beer }) {
             {/* <div className="amount">
                 {amountList}
             </div> */}
-            <div className="">
-                {items.map((_, id) => <span className="busterCards" key={id}>♦</span>)}
+            <div className="amounts">
+                {items.map((_, id) => <div className="amountbox" key={id}></div>)}
             </div>
         </div>
     );

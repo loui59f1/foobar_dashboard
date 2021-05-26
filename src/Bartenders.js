@@ -20,17 +20,28 @@ function BartenderRow({ bartender }) {
 
     // Burde minifyes og uppercase/lowercase
 
-    let bartenderStatus = "";
+    let bartenderStatusDetail = "";
     if (bartender.statusDetail === "reserveTap") {
-        bartenderStatus = "Reserving tap";
+        bartenderStatusDetail = "Reserving tap";
     } else if (bartender.statusDetail === "pourBeer") {
-        bartenderStatus = "Pouring beer";
+        bartenderStatusDetail = "Pouring beer";
     } else if (bartender.statusDetail === "receivePayment") {
-        bartenderStatus = "Receiving payment";
+        bartenderStatusDetail = "Receiving payment";
     } else if (bartender.statusDetail === "startServing") {
-        bartenderStatus = "Starting service";
+        bartenderStatusDetail = "Starting service";
     } else if (bartender.statusDetail === "releaseTap") {
-        bartenderStatus = "Releasing tap";
+        bartenderStatusDetail = "Releasing tap";
+    } else if (bartender.statusDetail === "replaceKeg") {
+        bartenderStatusDetail = "Replacing keg";
+    }
+
+    let bgColorStatus = '#00B818';
+
+    if (bartender.status === "WORKING") {
+        bgColorStatus = '#00B818';
+    } else {
+        bgColorStatus = '#FFAF06';
+        bartenderStatusDetail = "Ready";
     }
 
     let tapStatus = "";
@@ -44,15 +55,18 @@ function BartenderRow({ bartender }) {
         <div className="BartenderRow">
             <div className="bartender_img">
                 <img src={`./img/icon_bartender.svg`} alt="Bartender" />
+                <div className="bartender_status" style={{
+                    backgroundColor: bgColorStatus,
+                }}></div>
             </div>
             <div className="bartender_details">
                 <h3>{bartender.name}</h3>
-                <p>{bartenderStatus}</p>
+                <p>{bartenderStatusDetail}</p>
                 <p>{tapStatus}</p>
             </div>
             <div className="bartender_order_id">
                 <p>{bartenderServing}</p>
             </div>
-        </div>
+        </div >
     );
 }

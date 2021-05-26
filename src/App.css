@@ -100,13 +100,14 @@ h1 {
 
 .Storage {
   display: grid;
-  grid-template-columns: 1fr 1.03fr;
+  grid-template-columns: 1fr 0.7fr 1fr;
   grid-gap: 2em;
 }
 
 .StorageBeer {
   border: 1px solid #0a0a0a;
   padding: 10px 15px;
+  position: relative;
 }
 
 .StorageBeer h3 {
@@ -127,7 +128,7 @@ h1 {
 
 .taplist {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2em;
 }
 
@@ -149,4 +150,31 @@ h1 {
 
 tspan {
   fill: #fff !important;
+}
+
+.amounts {
+  position: absolute;
+top: 0.7em;
+right: 0;
+}
+
+.amountbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #19B3A6;
+  margin-right: 10px;
+}
+
+.extracolumn {
+  border: 1px solid #0a0a0a;
+  padding: 15px;
+}
+
+.bartender_status {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
 }
