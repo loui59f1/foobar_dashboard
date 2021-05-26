@@ -28,11 +28,6 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-.KPI {
-  border: 1px solid #0a0a0a;
-  padding: 10px 25px;
-  height: 330px;
-}
 
 .Bartenders {
   border: 1px solid #0a0a0a;
@@ -105,9 +100,12 @@ h1 {
 }
 
 .StorageBeer {
-  border: 1px solid #0a0a0a;
   padding: 10px 15px;
   position: relative;
+}
+
+.storage_list {
+  border: 1px solid #0a0a0a;
 }
 
 .StorageBeer h3 {
@@ -162,7 +160,7 @@ right: 0;
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: #19B3A6;
+  background-color: #25c23a;
   margin-right: 10px;
 }
 
@@ -177,4 +175,26 @@ right: 0;
   border-radius: 50%;
   position: absolute;
   top: 50px;
+}
+
+.KPI {
+  border: 1px solid #0a0a0a;
+  padding: 25px 25px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.KPI h2 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.order_queue h2 {
+  color: #25c23a;
+}
+
+.beers_sold h2 {
+  color: #25c23a;
 }

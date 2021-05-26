@@ -9,12 +9,16 @@ import Bartenders from "./Bartenders.js";
 import Storage from "./Storage.js";
 import prices from "./prices.json";
 
+let lastIdCounted = 0;
+let beersServed = 0;
+let totalAmount = 0;
+
 function App() {
 
   // Get data
   const [foobar, setFoobar] = useState({ storage: [], taps: [], queue: [], bartenders: [], bar: [] });
   // const [beerTypes, setBeerTypes] = useState({});
-  // const [totalSales, setTotalSales] = useState("0");
+  const [sales, setSales] = useState({});
 
   useFetch("https://dreaming-of-foobar.herokuapp.com");
 
@@ -30,8 +34,6 @@ function App() {
 
     return foobar;
   };
-
-
 
   // useEffect(() => {
   //   getData("https://dreaming-of-foobar.herokuapp.com");
@@ -50,6 +52,13 @@ function App() {
   //       }, 5000);
   //     });
   // }
+
+  // Average queue time
+
+  // Total sales of day
+
+
+
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
   //const orders = foobar.queue.map(beer => beer.order);
@@ -84,21 +93,23 @@ function App() {
     return order;
   });
 
-  const allOrderPrices = allOrders.map(beer => beer.price);
+  console.log(allOrders)
 
-  const totalAmount = allOrderPrices.reduce(
-    (previousScore, currentScore, index) => previousScore + currentScore,
-    0);
+  // Beers served today - nulstiller dog hver gang man loader...
 
-  // Beers served today
-
+  foobar.queue.forEach(customer => {
+    if (customer.id > lastIdCounted) {
+      beersServed += customer.order.length;
+      lastIdCounted = customer.id;
+    }
+  })
 
 
   return (
     <div>
       <Header bar={foobar.bar} />
       <div className="Dashboard">
-        <KPINumbers totalAmount={totalAmount} queue={foobar.queue} />
+        <KPINumbers serving={foobar.serving} queue={foobar.queue} totalAmount={totalAmount} beersServed={beersServed} />
         <Orders queue={foobar.queue} />
         <Bartenders bartenders={foobar.bartenders} />
       </div>

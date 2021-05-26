@@ -12,7 +12,9 @@ export default function Storage({ storage, taps }) {
         <div className="Storage">
             <div className="StorageList">
                 <h1>Storage</h1>
-                {storageList}
+                <div className="storage_list">
+                    {storageList}
+                </div>
             </div>
             <div className="StorageList">
                 <h1>Extra</h1>
@@ -41,9 +43,6 @@ function StorageBeer({ beer }) {
     return (
         <div className="StorageBeer">
             <h3>{beer.name} - {beer.amount}</h3>
-            {/* <div className="amount">
-                {amountList}
-            </div> */}
             <div className="amounts">
                 {items.map((_, id) => <div className="amountbox" key={id}></div>)}
             </div>
@@ -80,7 +79,7 @@ class DiagramStorageData extends React.Component {
                     innerRadius={70}
                     width={200} height={200}
                     data={[{ 'key': "", 'y': this.props.percentage }, { 'key': "", 'y': (100 - this.props.percentage) }]}
-                    colorScale={["#19B3A6", "#EEEEEE"]}
+                    colorScale={["#25c23a", "#EEEEEE"]}
                 />
             </div>
         )
