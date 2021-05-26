@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     getData("https://dreaming-of-foobar.herokuapp.com");
-  }, []);
+  });
 
   function getData(url) {
 
@@ -33,6 +33,20 @@ function App() {
         }, 5000);
       });
   }
+
+  // function useFetch (url) {
+  //   const [data, setData] = useState(null);
+  //   useEffect(() => {
+  //     async function fetchFromAPI() {
+  //       const json = await( await fetch(url) ).json();
+  //       setData(json);
+  //     }
+  //     fetchFromAPI()
+  //   },[url]);
+
+  //   return data;
+  // };
+
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
   // const orders = foobar.queue.map(beer => beer.order);
