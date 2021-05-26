@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie, VictoryLabel } from 'victory';
+import { VictoryPie, VictoryBar, VictoryLabel } from 'victory';
 
 export default function Storage({ storage, taps }) {
 
@@ -26,15 +26,25 @@ export default function Storage({ storage, taps }) {
 
 function StorageBeer({ beer }) {
 
+
+
+    const totalItems = beer.amount;
+
+    const items = new Array(totalItems).fill(null);
+
     return (
         <div className="StorageBeer">
             <h3>{beer.name} - {beer.amount}</h3>
             {/* <div className="amount">
                 {amountList}
             </div> */}
+            <div className="">
+                {items.map((_, id) => <span className="busterCards" key={id}>♦</span>)}
+            </div>
         </div>
     );
 }
+
 
 function StorageTapBeer({ tap }) {
     const percentage = (tap.level * 100) / tap.capacity;

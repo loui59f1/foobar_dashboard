@@ -15,37 +15,38 @@ function App() {
   const [foobar, setFoobar] = useState({ storage: [], taps: [], queue: [], bartenders: [], bar: [] });
   // const [totalSales, setTotalSales] = useState();
 
-  useEffect(() => {
-    getData("https://dreaming-of-foobar.herokuapp.com");
-  });
+  // useEffect(() => {
+  //   getData("https://dreaming-of-foobar.herokuapp.com");
+  // }, []);
 
-  function getData(url) {
+  // function getData(url) {
 
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((json) => {
+  //   fetch(url)
+  //     .then((resp) => resp.json())
+  //     .then((json) => {
 
+  //       setFoobar(json);
+
+  //       //tjekker hvert andet sekund
+  //       setTimeout(() => {
+  //         getData(url);
+  //       }, 5000);
+  //     });
+  // }
+
+  useFetch("https://dreaming-of-foobar.herokuapp.com");
+
+  function useFetch(url) {
+    useEffect(() => {
+      async function fetchFromAPI() {
+        const json = await (await fetch(url)).json();
         setFoobar(json);
+      }
+      fetchFromAPI()
+    }, [url]);
 
-        //tjekker hvert andet sekund
-        setTimeout(() => {
-          getData(url);
-        }, 5000);
-      });
-  }
-
-  // function useFetch (url) {
-  //   const [data, setData] = useState(null);
-  //   useEffect(() => {
-  //     async function fetchFromAPI() {
-  //       const json = await( await fetch(url) ).json();
-  //       setData(json);
-  //     }
-  //     fetchFromAPI()
-  //   },[url]);
-
-  //   return data;
-  // };
+    return foobar;
+  };
 
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
@@ -70,8 +71,8 @@ function App() {
       <Header bar={foobar.bar} />
       <div className="Dashboard">
         <KPINumbers queue={foobar.queue} />
-        <Bartenders bartenders={foobar.bartenders} />
         <Orders queue={foobar.queue} />
+        <Bartenders bartenders={foobar.bartenders} />
       </div>
       <Storage taps={foobar.taps} storage={foobar.storage} />
     </div>

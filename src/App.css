@@ -23,7 +23,7 @@ h1 {
 
 .Dashboard {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 2em;
   margin-bottom: 0.5em;
 }
@@ -80,7 +80,8 @@ h1 {
 }
 
 .orderlist {
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .order-card {

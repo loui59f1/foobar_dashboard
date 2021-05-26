@@ -43,7 +43,7 @@ function BartenderRow({ bartender }) {
     return (
         <div className="BartenderRow">
             <div className="bartender_img">
-                <img src="./public/img/beer_bottle.svg" alt="Bartender"></img>
+                <img src={`./img/icon_bartender.svg`} alt="Bartender" />
             </div>
             <div className="bartender_details">
                 <h3>{bartender.name}</h3>
