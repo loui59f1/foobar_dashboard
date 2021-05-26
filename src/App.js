@@ -16,40 +16,40 @@ function App() {
   // const [beerTypes, setBeerTypes] = useState({});
   // const [totalSales, setTotalSales] = useState("0");
 
-  // useFetch("https://dreaming-of-foobar.herokuapp.com");
+  useFetch("https://dreaming-of-foobar.herokuapp.com");
 
-  // function useFetch(url) {
-  //   useEffect(() => {
-  //     async function fetchFromAPI() {
-  //       console.log("fetching data")
-  //       const json = await (await fetch(url)).json();
-  //       setFoobar(json);
-  //     }
-  //     fetchFromAPI();
-  //   }, [url]);
-
-  //   return foobar;
-  // };
-
-
-
-  useEffect(() => {
-    getData("https://dreaming-of-foobar.herokuapp.com");
-  }, []);
-
-  function getData(url) {
-
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((json) => {
-
+  function useFetch(url) {
+    useEffect(() => {
+      async function fetchFromAPI() {
+        console.log("fetching data")
+        const json = await (await fetch(url)).json();
         setFoobar(json);
-        //tjekker hvert andet sekund
-        setTimeout(() => {
-          getData(url);
-        }, 5000);
-      });
-  }
+      }
+      fetchFromAPI();
+    }, [url]);
+
+    return foobar;
+  };
+
+
+
+  // useEffect(() => {
+  //   getData("https://dreaming-of-foobar.herokuapp.com");
+  // }, []);
+
+  // function getData(url) {
+
+  //   fetch(url)
+  //     .then((resp) => resp.json())
+  //     .then((json) => {
+
+  //       setFoobar(json);
+  //       //tjekker hvert andet sekund
+  //       setTimeout(() => {
+  //         getData(url);
+  //       }, 5000);
+  //     });
+  // }
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
   //const orders = foobar.queue.map(beer => beer.order);
