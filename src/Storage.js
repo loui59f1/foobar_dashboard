@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie, VictoryBar, VictoryLabel } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 export default function Storage({ storage, taps }) {
 
