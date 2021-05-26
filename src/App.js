@@ -18,7 +18,6 @@ function App() {
   // Get data
   const [foobar, setFoobar] = useState({ storage: [], taps: [], queue: [], bartenders: [], bar: [] });
   // const [beerTypes, setBeerTypes] = useState({});
-  const [sales, setSales] = useState({});
 
   useFetch("https://dreaming-of-foobar.herokuapp.com");
 
