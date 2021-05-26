@@ -1,6 +1,6 @@
 export default function Bartenders({ bartenders }) {
 
-    const bartenderList = bartenders.map((bartender) => <BartenderRow bartender={bartender} />);
+    const bartenderList = bartenders.map((bartender) => <BartenderRow bartender={bartender} key={bartender.name} />);
 
     return (
         <div className="Bartenders">
@@ -15,7 +15,7 @@ function BartenderRow({ bartender }) {
     if (bartender.servingCustomer === null) {
         bartenderServing = "";
     } else {
-        bartenderServing = "Serving order " + bartender.servingCustomer;
+        bartenderServing = "#" + bartender.servingCustomer;
     }
 
     // Burde minifyes og uppercase/lowercase
@@ -42,10 +42,17 @@ function BartenderRow({ bartender }) {
 
     return (
         <div className="BartenderRow">
-            <h3>{bartender.name}</h3>
-            <p>{bartenderServing}</p>
-            <p>{bartenderStatus}</p>
-            <p>{tapStatus}</p>
+            <div className="bartender_img">
+                <img src="./public/img/beer_bottle.svg" alt="Bartender"></img>
+            </div>
+            <div className="bartender_details">
+                <h3>{bartender.name}</h3>
+                <p>{bartenderStatus}</p>
+                <p>{tapStatus}</p>
+            </div>
+            <div className="bartender_order_id">
+                <p>{bartenderServing}</p>
+            </div>
         </div>
     );
 }

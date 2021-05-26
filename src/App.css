@@ -1,5 +1,5 @@
 body {
-  padding: 25px;
+  padding: 0 25px;
 }
 
 header {
@@ -8,60 +8,132 @@ header {
   margin-bottom: 2em;
 }
 
+h1 {
+  font-size: 20px;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.info {
+  display: inline-block;
+  float: right;
+}
+
 .Dashboard {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 
 .KPI {
   border: 1px solid #0a0a0a;
-  padding: 25px;
+  padding: 10px 25px;
+  height: 330px;
 }
 
 .Bartenders {
   border: 1px solid #0a0a0a;
-  padding: 25px;
+  padding: 10px 25px;
+  height: 330px;
+}
+
+.BartenderRow {
+  position: relative;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 80px;
+  align-items: center;
+}
+
+.bartender_order_id p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.bartender_details h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.bartender_details {
+}
+
+.bartender_details p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.bartender_img img {
+  width: 50px;
+  height: 50px;
 }
 
 .Orders {
   border: 1px solid #0a0a0a;
-  padding: 25px;
+  padding: 10px 25px;
+  height: 330px;
+  overflow-y: scroll;
+}
+
+.orderlist {
+
+}
+
+.order-card {
+  border: 1px solid #0a0a0a;
+  padding: 0 25px;
+}
+
+.orderlist li {
+  list-style: none;
+}
+
+.orderlist ul {
+  list-style: none;
+  padding-left: 0px;
 }
 
 .Storage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.03fr;
   grid-gap: 2em;
 }
 
 .StorageBeer {
   border: 1px solid #0a0a0a;
-  padding: 25px;
+  padding: 10px 15px;
+}
+
+.StorageBeer h3 {
+  margin: 0;
+  font-size: 15px;
 }
 
 .StorageTapBeer {
   position: relative;
   border: 1px solid #0a0a0a;
-  padding: 25px;
+  padding: 15px;
   text-align: center;
 }
 
 .StorageTapBeer h3 {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .taplist {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 2em;
 }
 
 .percentage_text {
   position: absolute;
-  left: 28%;
-  top: 42%;
+  left: 22%;
+  top: 27%;
   width: 70px;
   text-align: center;
 }
@@ -70,6 +142,10 @@ header {
   top: 0;
   right: 0;
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
+}
+
+tspan {
+  fill: #fff !important;
 }

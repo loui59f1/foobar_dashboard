@@ -1,8 +1,8 @@
 export default function Header({ bar }) {
     return (
         <header>
-            <p>{bar.name}</p>
-            <p>Closing at {bar.closingTime}</p>
+            <div className="logo">{bar.name}</div>
+            <div className="info">Closing at {bar.closingTime}</div>
         </header>
     );
 }

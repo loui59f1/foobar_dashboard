@@ -1,10 +1,10 @@
 import React from 'react';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 export default function Storage({ storage, taps }) {
 
-    const storageList = storage.map((beer) => <StorageBeer beer={beer} />);
-    const tapList = taps.map((tap) => <StorageTapBeer tap={tap} />);
+    const storageList = storage.map((beer) => <StorageBeer beer={beer} key={beer.name} />);
+    const tapList = taps.map((tap) => <StorageTapBeer tap={tap} key={tap.id} />);
 
     // Vi får fejl i konsollen pga. den ikke kan finde storage og taps til at starte med
 
@@ -25,10 +25,13 @@ export default function Storage({ storage, taps }) {
 }
 
 function StorageBeer({ beer }) {
+
     return (
         <div className="StorageBeer">
-            <h3>{beer.name}</h3>
-            <p>Amount {beer.amount}</p>
+            <h3>{beer.name} - {beer.amount}</h3>
+            {/* <div className="amount">
+                {amountList}
+            </div> */}
         </div>
     );
 }
@@ -48,13 +51,16 @@ class DiagramStorageData extends React.Component {
     render() {
         return (
             <div className="pie">
-                <text className="percentage_text" textAnchor="middle" >
+                <p className="percentage_text">
                     {this.props.percentage}%
-                </text>
+                </p>
                 <VictoryPie
+                    animate={{
+                        duration: 2000
+                    }}
                     padAngle={0}
                     // used to hide labels
-                    labelComponent={<span />}
+                    labelComponent={<VictoryLabel verticalanchor="middle" />}
                     innerRadius={70}
                     width={200} height={200}
                     data={[{ 'key': "", 'y': this.props.percentage }, { 'key': "", 'y': (100 - this.props.percentage) }]}
