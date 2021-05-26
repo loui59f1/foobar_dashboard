@@ -68,7 +68,6 @@ function App() {
 
   return (
     <div>
-      <h1>Test</h1>
       <Header bar={foobar.bar} />
       <div className="Dashboard">
         <KPINumbers queue={foobar.queue} />
