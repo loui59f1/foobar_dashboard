@@ -198,3 +198,16 @@ right: 0;
 .beers_sold h2 {
   color: #25c23a;
 }
+
+.orders_kpi h2 {
+  color: #25c23a;
+}
+
+.sales_day h2 {
+  font-size: 25px;
+  color: #25c23a;
+}
+
+.queue_time h2 {
+  font-size: 25px;
+}
