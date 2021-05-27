@@ -1,6 +1,6 @@
 export default function KPINumbers({ queue, serving, beersServed, totalAmount, customersServed }) {
+  //finding estimated time
   const queueObject = {};
-
   queueObject.count = 0;
   queueObject.amount = 0;
 

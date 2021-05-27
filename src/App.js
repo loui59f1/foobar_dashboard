@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 
 import { useState, useEffect } from "react";
 
@@ -16,7 +16,6 @@ let totalAmount = 0;
 const duplicatesResult = {};
 
 function App() {
-
   // Get data
   const [foobar, setFoobar] = useState({ storage: [], taps: [], serving: [], queue: [], bartenders: [], bar: [] });
   // const [beerTypes, setBeerTypes] = useState({});
@@ -41,11 +40,9 @@ function App() {
   }, []);
 
   function getData(url) {
-
     fetch(url)
       .then((resp) => resp.json())
       .then((json) => {
-
         setFoobar(json);
         //tjekker hvert andet sekund
         setTimeout(() => {
@@ -57,9 +54,6 @@ function App() {
   // Average queue time
 
   // Total sales of day
-
-
-
 
   // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
 
@@ -97,15 +91,14 @@ function App() {
 
   // Beers served today - nulstiller dog hver gang man loader...
 
-  foobar.serving.forEach(customer => {
+  foobar.serving.forEach((customer) => {
     if (customer.id > lastIdCounted) {
       beersServed += customer.order.length;
       customersServed++;
       findTotalSales(customer);
       lastIdCounted = customer.id;
     }
-  })
-
+  });
 
   function findTotalSales(customer) {
     customer.order.map((beer) => {
@@ -125,19 +118,14 @@ function App() {
     });
 
     const totalArr = allOrders.map((beer) => {
-
       const priceObject = beer.price;
 
       return priceObject;
     });
 
-
-    const totalAmountNumber = totalArr.reduce(
-      (previousScore, currentScore, index) => previousScore + currentScore,
-      0);
+    const totalAmountNumber = totalArr.reduce((previousScore, currentScore, index) => previousScore + currentScore, 0);
 
     totalAmount = totalAmountNumber;
-
   }
 
   return (
