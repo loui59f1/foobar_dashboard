@@ -6,7 +6,7 @@ export default function Orders({ queue }) {
 
   return (
     <div className="Orders">
-      <h1>Incoming orders</h1>
+      <h1>Incoming orders here</h1>
       <div className="orderlist">
         {queue.map((orders) => {
           const copyResult = {};
