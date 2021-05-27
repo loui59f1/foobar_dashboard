@@ -18,7 +18,7 @@ const duplicatesResult = {};
 function App() {
 
   // Get data
-  const [foobar, setFoobar] = useState({ storage: [], taps: [], queue: [], bartenders: [], bar: [] });
+  const [foobar, setFoobar] = useState({ storage: [], taps: [], serving: [], queue: [], bartenders: [], bar: [] });
   // const [beerTypes, setBeerTypes] = useState({});
 
   // useFetch("https://dreaming-of-foobar.herokuapp.com");
@@ -97,7 +97,7 @@ function App() {
 
   // Beers served today - nulstiller dog hver gang man loader...
 
-  foobar.queue.forEach(customer => {
+  foobar.serving.forEach(customer => {
     if (customer.id > lastIdCounted) {
       beersServed += customer.order.length;
       customersServed++;
