@@ -5,12 +5,12 @@ export default function KPINumbers({ queue, serving, beersServed, totalAmount, c
   queueObject.amount = 0;
 
   //map through orders in queue
-  queue.map((order) => {
+  queue.forEach((order) => {
     queueObject.amount = order.order.length;
     queueObject.count += queueObject.amount;
   });
 
-  serving.map((order) => {
+  serving.forEach((order) => {
     queueObject.amount = order.order.length;
     queueObject.count += queueObject.amount;
   });

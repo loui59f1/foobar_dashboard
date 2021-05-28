@@ -36,20 +36,20 @@ function App() {
   // };
 
   useEffect(() => {
+    function getData(url) {
+      fetch(url)
+        .then((resp) => resp.json())
+        .then((json) => {
+          setFoobar(json);
+          //tjekker hvert andet sekund
+          setTimeout(() => {
+            getData(url);
+          }, 5000);
+        });
+    }
     getData("https://dreaming-of-foobar.herokuapp.com");
   }, []);
 
-  function getData(url) {
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((json) => {
-        setFoobar(json);
-        //tjekker hvert andet sekund
-        setTimeout(() => {
-          getData(url);
-        }, 5000);
-      });
-  }
 
   // Average queue time
 
