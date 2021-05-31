@@ -1,4 +1,4 @@
-import "./App.css";
+import "./sass/main.scss";
 
 import { useState, useEffect } from "react";
 
