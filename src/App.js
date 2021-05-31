@@ -132,9 +132,9 @@ function App() {
     <div>
       <Header bar={foobar.bar} />
       <div className="Dashboard">
-        <KPINumbers serving={foobar.serving} queue={foobar.queue} totalAmount={totalAmount} beersServed={beersServed} customersServed={customersServed} />
         <Orders queue={foobar.queue} />
         <Bartenders bartenders={foobar.bartenders} />
+        <KPINumbers serving={foobar.serving} queue={foobar.queue} totalAmount={totalAmount} beersServed={beersServed} customersServed={customersServed} />
       </div>
       <Storage taps={foobar.taps} storage={foobar.storage} />
     </div>

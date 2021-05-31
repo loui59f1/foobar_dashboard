@@ -4,17 +4,48 @@
 @use 'base';
 
 body {
-    padding: 0 25px;
+    background: radial-gradient(circle, #3E3D6E 82%, #25234A 100%);
+    // background-image: url("../img/gradient_bg.jpg");
+    // background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    font-size: 0.9em;
+  }
+
+  .logo {
+    width: 100px;
   }
   
   header {
-    border: 1px solid #0a0a0a;
-    padding: 15px 25px;
-    margin-bottom: 2em;
+    padding: 40px;
+
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: -10px;
+      margin-left: 10px;
+      border: none;
+      background-color: rgba(255,255,255, 0.25);
+      backdrop-filter: blur(20px);
+      color: #fff;
+    }
   }
+
+  // .notification_btn {
+  //   background-image: url("../img/bell.png");
+  //   background-size: cover;
+  //   width: 40px;
+  //   height: 40px;
+  //   position: absolute;
+  // }
   
   h1 {
-    font-size: 20px;
+    font-size: 17px;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 600;
   }
   
   .logo {
@@ -23,28 +54,34 @@ body {
   
   .info {
     display: inline-block;
-    float: right;
+    margin-left: 25px;
+    font-family: 'Jost', sans-serif;
+    line-height: 16px;
   }
   
   .Dashboard {
+    padding: 0 40px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 2em;
-    margin-bottom: 0.5em;
+    grid-template-columns: 2.5fr 1fr 1fr;
+    grid-gap: 3em;
+    margin-bottom: 3em;
   }
   
   
   .Bartenders {
-    border: 1px solid #0a0a0a;
-    padding: 10px 25px;
-    height: 330px;
+    padding: 30px 45px;
+    border-radius: 50px 50px 0 50px;
+  }
+
+  .Bartenders h1 {
+    margin-bottom: 25px;
   }
   
   .BartenderRow {
     position: relative;
     margin-bottom: 10px;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1.5fr 4fr 1fr;
     height: 80px;
     align-items: center;
   }
@@ -73,24 +110,52 @@ body {
   }
   
   .Orders {
-    border: 1px solid #0a0a0a;
-    padding: 10px 25px;
+    position: relative;
+    padding: 30px 45px;
+    border-radius: 50px 50px 50px 0;
     height: 330px;
+  }
+
+  .disable-scrollbars {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+  
+.Orders h3 {
+  color: #63C8BA;
+  letter-spacing: 1px;
+  font-family: 'Jost', sans-serif;
+}
+
+.KPI h1 {
+  margin-bottom: 25px;
+}
+
+.KPI h2 {
+  color: #67ddcd;
+  font-family: 'Jost', sans-serif;
+  font-size: 25px;
+}
+
+  .orderlist {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
     overflow-y: scroll;
   }
   
-  .orderlist {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
   .order-card {
-    border: 1px solid #0a0a0a;
-    padding: 0 25px;
+    padding: 10px 30px;
+    padding-right: 20px;
+    background-color: rgba(255,255,255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 40px 40px 40px 0;
   }
   
   .orderlist li {
     list-style: none;
+    margin-bottom: 5px;
   }
   
   .orderlist ul {
@@ -100,77 +165,112 @@ body {
   
   .Storage {
     display: grid;
-    grid-template-columns: 1fr 0.7fr 1fr;
-    grid-gap: 2em;
+    grid-template-columns: 0.4fr 1fr;
+    grid-gap: 3em;
+    padding: 0 40px;
   }
   
   .StorageBeer {
-    padding: 10px 15px;
+    padding: 10px 0px;
+    position: relative;
+    border-radius: 0 50px 50px 50px;
+  }
+
+  .StorageList {
+    max-height: 300px;
+    border-radius: 0 50px 50px 50px;
+    padding: 30px 45px;
+    height: 300px;
+    height: 100%;
     position: relative;
   }
-  
+
+  .overlay {
+    position: relative;
+    -webkit-mask-image: -webkit-gradient(linear,left 20%,left bottom,from(rgba(37, 35, 74, 1)),to(rgba(37, 35, 74, 0.9)));
+  }
+
   .storage_list {
-    border: 1px solid #0a0a0a;
+    padding-bottom: 150px;
+    overflow-y: scroll;
+    height: 160px;
+    
   }
   
   .StorageBeer h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 400;
   }
   
+  .TabList {
+    position: relative;
+    padding: 30px 25px;
+    border-radius: 50px 0 50px 50px;
+    overflow: hidden;
+    height: 300px;
+    padding-top: 60px;
+    padding-bottom: 0px;
+  }
+
   .StorageTapBeer {
     position: relative;
-    border: 1px solid #0a0a0a;
     padding: 15px;
     text-align: center;
   }
-  
+
   .StorageTapBeer h3 {
-    font-size: 13px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 500;
   }
   
   .taplist {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 2em;
   }
   
   .percentage_text {
     position: absolute;
-    left: 22%;
-    top: 27%;
+    left: 27%;
+    top: 30%;
     width: 70px;
     text-align: center;
+    font-size: 18px;
+    font-family: 'Jost', sans-serif;
+    color: #e2fffb;
+    font-weight: 600;
   }
   
   .pie {
     top: 0;
     right: 0;
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
   
   tspan {
-    fill: #fff !important;
+    fill: transparent !important;
   }
   
   .amounts {
     position: absolute;
-  top: 0.7em;
-  right: 0;
+    top: 0.7em;
+    right: -10px;
   }
   
   .amountbox {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #25c23a;
+    width: 12px;
+    height: 12px;
+    background-color: #63C8BA;
     margin-right: 10px;
   }
   
   .extracolumn {
-    border: 1px solid #0a0a0a;
     padding: 15px;
   }
   
@@ -180,15 +280,21 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 50px;
+    -webkit-box-shadow: 14px -13px 38px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 14px -13px 38px -6px rgba(0,0,0,0.75);
+    box-shadow: 14px -13px 38px -6px rgba(0,0,0,0.75);
   }
   
   .KPI {
-    border: 1px solid #0a0a0a;
-    padding: 25px 25px;
-    height: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
+    padding: 30px 45px;
+    border-radius: 50px 50px 50px 0;
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
     .KPI h2 {
       font-size: 30px;
@@ -196,26 +302,28 @@ body {
     }
   }
   
-  
-  .order_queue h2 {
-    color: #25c23a;
+  .card {
+    background-color: rgba(255,255,255, 0.15);
+    backdrop-filter: blur(20px);
   }
-  
-  .beers_sold h2 {
-    color: #25c23a;
+
+  .order_queue {
+    position: absolute;
+    right: 45px;
+    top: 22px;
+    display: inline-block;
   }
-  
-  .orders_kpi h2 {
-    color: #25c23a;
+
+  .queue_number {
+    font-size: 23px;
+    font-family: 'Jost';
+    color: #94ECE0;
+    font-weight: 500;
+    margin-left: 15px;
   }
-  
-  .sales_day h2 {
-    font-size: 25px;
-    color: #25c23a;
+
+  .dashboard_navigation {
+    position: absolute;
+    top: 40px;
+    right: 40px;
   }
-  
-  .queue_time h2 {
-    font-size: 25px;
-    color: #25c23a;
-  }
-  

@@ -3,7 +3,7 @@ export default function Bartenders({ bartenders }) {
     const bartenderList = bartenders.map((bartender) => <BartenderRow bartender={bartender} key={bartender.name} />);
 
     return (
-        <div className="Bartenders">
+        <div className="Bartenders card">
             <h1>Bartenders</h1>
             <div className="BartenderList">{bartenderList}</div>
         </div>
@@ -38,9 +38,9 @@ function BartenderRow({ bartender }) {
     let bgColorStatus = '#00B818';
 
     if (bartender.status === "WORKING") {
-        bgColorStatus = '#25c23a';
+        bgColorStatus = '#94ECE0';
     } else {
-        bgColorStatus = '#FFAF06';
+        bgColorStatus = '#807EBE';
         bartenderStatusDetail = "Ready";
     }
 

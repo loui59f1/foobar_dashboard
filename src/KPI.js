@@ -18,12 +18,9 @@ export default function KPINumbers({ queue, serving, beersServed, totalAmount, c
   let estimatedTime = 0.5 * queueObject.count;
 
   return (
-    <div className="KPI">
+    <div className="KPI card">
+      <h1>KPI</h1>
       <div className="row">
-        <div className="order_queue">
-          <h2>{queue.length}</h2>
-          <p>Orders in queue</p>
-        </div>
         <div className="sales_day">
           <h2>{totalAmount} DKK</h2>
           <p>Sales of the day</p>
@@ -34,17 +31,13 @@ export default function KPINumbers({ queue, serving, beersServed, totalAmount, c
         </div>
       </div>
       <div className="row">
-        <div className="orders_kpi">
-          <h2>{customersServed}</h2>
-          <p>Orders today</p>
-        </div>
         <div className="queue_time">
           <h2>{estimatedTime} min</h2>
           <p>Average queue time</p>
         </div>
-        <div className="">
-          <h2>14</h2>
-          <p>Something</p>
+        <div className="orders_kpi">
+          <h2>{customersServed}</h2>
+          <p>Orders today</p>
         </div>
       </div>
     </div>
