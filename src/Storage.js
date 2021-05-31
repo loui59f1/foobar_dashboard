@@ -17,7 +17,7 @@ export default function Storage({ storage, taps }) {
                     </div>
                 </div>
             </div>
-            <div className="TabList card">
+            <div className="TabList card disable-scrollbars">
                 {/* <h1>Taps</h1> */}
                 <div className="taplist">
                     {tapList}

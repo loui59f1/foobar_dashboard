@@ -17,9 +17,18 @@ export default function KPINumbers({ queue, serving, beersServed, totalAmount, c
 
   let estimatedTime = 0.5 * queueObject.count;
 
+
+  let myCurrentDate = new Date()
+  let date = myCurrentDate.getDate();
+  let month = myCurrentDate.getMonth() + 1;
+  let year = myCurrentDate.getFullYear();
+
   return (
     <div className="KPI card">
       <h1>KPI</h1>
+      <div className="kpi_date">
+        <p>{date} - {month < 10 ? `0${month}` : `${month}`} - {year}</p>
+      </div>
       <div className="row">
         <div className="sales_day">
           <h2>{totalAmount} DKK</h2>

@@ -1,5 +1,5 @@
 import "./sass/main.scss";
-
+import React from 'react';
 import { useState, useEffect } from "react";
 
 import Header from "./Header.js";
@@ -51,11 +51,8 @@ function App() {
   }, []);
 
 
-  // Average queue time
 
   // Total sales of day
-
-  // Få lavet et array med samtlige total fra hver ordre, derefter reduce eller setTotalSales
 
   const allBeer = [];
 

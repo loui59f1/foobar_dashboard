@@ -29,8 +29,10 @@ export default function Orders({ queue }) {
               setQueueLength(queue.length);
             }
 
-            queueLength !== queue.length ? checkQueueLength() : console.log("no");
-            //
+
+            // Bruger vi denne?
+            // queueLength !== queue.length ? checkQueueLength() : console.log("no");
+            // //
 
             return (
               <div className="order-card" key={orders.id}>

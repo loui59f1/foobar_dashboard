@@ -5,6 +5,9 @@ export default function Bartenders({ bartenders }) {
     return (
         <div className="Bartenders card">
             <h1>Bartenders</h1>
+            <div className="bartenders_amount">
+                <p>3 at work</p>
+            </div>
             <div className="BartenderList">{bartenderList}</div>
         </div>
     );
