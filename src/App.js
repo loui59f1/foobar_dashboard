@@ -1,5 +1,5 @@
 import "./sass/main.scss";
-import React from 'react';
+import React from "react";
 import { useState, useEffect } from "react";
 
 import Header from "./Header.js";
@@ -49,8 +49,6 @@ function App() {
     }
     getData("https://dreaming-of-foobar.herokuapp.com");
   }, []);
-
-
 
   // Total sales of day
 
@@ -124,10 +122,10 @@ function App() {
 
     totalAmount = totalAmountNumber;
   }
-
+  //timestamp={foobar.timestamp} closingTime={foobar.bar.closingTime}
   return (
     <div>
-      <Header bar={foobar.bar} />
+      <Header foobar={foobar} />
       <div className="Dashboard">
         <Orders queue={foobar.queue} />
         <Bartenders bartenders={foobar.bartenders} />
