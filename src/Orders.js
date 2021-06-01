@@ -19,15 +19,16 @@ export default function Orders({ queue }) {
               return copyResult;
             });
 
+            // Bruger vi dette?
             //adding animation by checking length
-            function checkQueueLength() {
-              if (queueLength < queue.length || queueLength === 1) {
-                gsap.fromTo(".order-card", { opacity: 0 }, { opacity: 1, y: 0, duration: 2 });
-              } else {
-                gsap.fromTo(".order-card", { opacity: 0.2 }, { opacity: 1, duration: 1 });
-              }
-              setQueueLength(queue.length);
-            }
+            // function checkQueueLength() {
+            //   if (queueLength < queue.length || queueLength === 1) {
+            //     gsap.fromTo(".order-card", { opacity: 0 }, { opacity: 1, y: 0, duration: 2 });
+            //   } else {
+            //     gsap.fromTo(".order-card", { opacity: 0.2 }, { opacity: 1, duration: 1 });
+            //   }
+            //   setQueueLength(queue.length);
+            // }
 
 
             // Bruger vi denne?
