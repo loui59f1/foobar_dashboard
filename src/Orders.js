@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 export default function Orders({ queue }) {
-  const [queueLength, setQueueLength] = useState(0);
+  // const [queueLength, setQueueLength] = useState(0);
 
   return (
     <div className="Orders card">
