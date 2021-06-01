@@ -1,7 +1,7 @@
-@use 'layout';
-@use 'abstracts';
-@use 'components';
-@use 'base';
+@import 'layout/header';
+@import 'abstracts/variables';
+@import 'components/buttons';
+@import 'base/typography';
 
 body {
     background: radial-gradient(circle, #3E3D6E 82%, #25234A 100%);
@@ -10,88 +10,6 @@ body {
     font-family: 'Quicksand', sans-serif;
     color: #fff;
     font-size: 0.9em;
-  }
-
-  .logo {
-    width: 100px;
-  }
-  
-  header {
-    padding: 40px;
-    padding-bottom: 25px;
-
-    button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-      margin-top: -10px;
-      margin-left: 10px;
-      border: none;
-      background-color: rgba(255,255,255, 0.25);
-      backdrop-filter: blur(20px);
-      color: #fff;
-    }
-  }
-
-  .notification_btn {
-    background-image: url("../img/bell.svg");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;
-    cursor: pointer;
-  }
-
-  .notification_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
-  }
-
-  .mail_btn {
-    background-image: url("../img/mail.svg");
-    background-repeat: no-repeat;
-    background-size: 43%;
-    background-position: center;
-    cursor: pointer;
-  }
-
-  .mail_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
-  }
-
-  .settings_btn {
-    background-image: url("../img/settings.svg");
-    background-repeat: no-repeat;
-    background-size: 43%;
-    background-position: center;
-    cursor: pointer;
-  }
-
-  .settings_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
-  }
-
-  .info_btn {
-    background-image: url("../img/info.svg");
-    background-repeat: no-repeat;
-    background-size: 17%;
-    background-position: 50% 65%;
-    cursor: pointer;
-  }
-
-  .info_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
-  }
-  
-  h1 {
-    font-size: 17px;
-    font-family: 'Jost', sans-serif;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-  }
-  
-  .logo {
-    display: inline-block;
-    margin-left: 10px;
   }
   
   .info {
@@ -166,7 +84,7 @@ body {
   .Orders {
     position: relative;
     padding: 30px 45px;
-    border-radius: 50px 50px 50px 0;
+    border-radius: 0px 50px 50px 50px;
     height: 330px;
   }
 
@@ -233,7 +151,7 @@ body {
 
   .StorageList {
     max-height: 300px;
-    border-radius: 0 50px 50px 50px;
+    border-radius: 50px 50px 0px 50px;
     padding: 30px 45px;
     height: 300px;
     height: 100%;
@@ -261,7 +179,7 @@ body {
   .TabList {
     position: relative;
     padding: 30px 25px;
-    border-radius: 50px 0 50px 50px;
+    border-radius: 50px 50px 50px 0px;
     overflow-x: scroll;
     height: 300px;
     padding-top: 60px;
@@ -360,7 +278,7 @@ body {
   
   .card {
     background-color: rgba(255,255,255, 0.15);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(50px);
   }
 
   .order_queue {
