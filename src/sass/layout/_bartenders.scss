@@ -1,0 +1,55 @@
+.Bartenders {
+  padding: 30px 45px;
+  border-radius: 50px 50px 0 50px;
+  position: relative;
+}
+
+.bartenders_amount {
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  display: inline-block;
+}
+
+.Bartenders h1 {
+  margin-bottom: 25px;
+}
+
+.BartenderRow {
+  position: relative;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 1fr;
+  height: 80px;
+  align-items: center;
+}
+
+.bartender_order_id p {
+  margin: 0;
+}
+
+.bartender_details p {
+  margin: 0;
+}
+
+.bartender_details h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.bartender_img img {
+  width: 50px;
+  height: 50px;
+  padding-right: 15px;
+}
+
+.bartender_status {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  -webkit-box-shadow: 14px -13px 38px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 14px -13px 38px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 14px -13px 38px -6px rgba(0, 0, 0, 0.75);
+}

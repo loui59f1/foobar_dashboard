@@ -1,0 +1,112 @@
+// Importing the variable stylesheet
+@use "sass/abstracts/variables";
+
+.Storage {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-gap: 3em;
+  padding: 0 40px;
+}
+
+.StorageBeer {
+  padding: 10px 0px;
+  position: relative;
+  border-radius: 0 50px 50px 50px;
+}
+
+.StorageList {
+  max-height: 300px;
+  border-radius: 50px 50px 0px 50px;
+  padding: 30px 45px;
+  height: 300px;
+  height: 100%;
+  position: relative;
+}
+
+.overlay_storage {
+  width: 83%;
+  height: 82%;
+  position: absolute;
+  z-index: 100;
+  -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
+  background: rgb(91, 90, 132);
+  background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
+}
+
+.storage_list {
+  padding-bottom: 150px;
+  overflow-y: scroll;
+  height: 160px;
+}
+
+.StorageBeer h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.TabList {
+  position: relative;
+  padding: 30px 25px;
+  border-radius: 50px 50px 50px 0px;
+  overflow-x: scroll;
+  height: 300px;
+  padding-top: 60px;
+  padding-bottom: 0px;
+}
+
+.StorageTapBeer {
+  position: relative;
+  padding: 15px;
+  text-align: center;
+}
+
+.StorageTapBeer h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.amounts {
+  position: absolute;
+  top: 0.7em;
+  right: -10px;
+}
+
+.amountbox {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #63c8ba;
+  margin-right: 10px;
+}
+
+.taplist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.percentage_text {
+  position: absolute;
+  left: 27%;
+  top: 30%;
+  width: 70px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Jost", sans-serif;
+  color: $white;
+  font-weight: 400;
+}
+
+.pie {
+  top: 0;
+  right: 0;
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+tspan {
+  fill: transparent !important;
+}

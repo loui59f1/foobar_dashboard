@@ -1,0 +1,70 @@
+// Importing the variable stylesheet
+@use "sass/abstracts/variables";
+
+.Orders {
+  position: relative;
+  padding: 30px 45px;
+  border-radius: 0px 50px 50px 50px;
+  height: 330px;
+}
+
+.disable-scrollbars {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.Orders h3 {
+  color: $blue;
+  letter-spacing: 1px;
+}
+
+.orderlist {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.order-card {
+  padding: 10px 30px;
+  padding-right: 20px;
+  background-color: $transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 40px 40px 40px 0;
+}
+
+.orderlist li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.orderlist ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.order_queue {
+  position: absolute;
+  right: 45px;
+  top: 22px;
+  display: inline-block;
+}
+
+.queue_number {
+  font-size: 23px;
+  color: $blue;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.overlay_orders {
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  z-index: 100;
+  -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
+  background: rgb(91, 90, 132);
+  background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
+}

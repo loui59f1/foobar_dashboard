@@ -1,0 +1,32 @@
+// Importing the variable stylesheet
+@use "sass/abstracts/variables";
+
+.KPI {
+  padding: 30px 45px;
+  border-radius: 50px 50px 50px 0;
+  position: relative;
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.KPI h1 {
+  margin-bottom: 25px;
+}
+
+.KPI h2 {
+  color: $blue;
+  font-size: 25px;
+  margin: 0;
+}
+
+.kpi_date {
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  display: inline-block;
+}

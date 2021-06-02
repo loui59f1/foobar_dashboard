@@ -2,60 +2,76 @@
 @use "sass/abstracts/variables";
 
 header {
-    padding: 40px;
-    padding-bottom: 25px;
-  }
+  padding: 40px;
+  padding-bottom: 25px;
+}
 
 .logo {
-    width: 100px;
-    display: inline-block;
-    margin-left: 10px;
+  width: 100px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .notification_btn {
-    background-image: url("../../img/bell.svg");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;
-    cursor: pointer;
+  background-image: url("../../img/bell.svg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  cursor: pointer;
 }
 
 .notification_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
+  background-color: $transparent;
 }
 
 .mail_btn {
-    background-image: url("../../img/mail.svg");
-    background-repeat: no-repeat;
-    background-size: 43%;
-    background-position: center;
-    cursor: pointer;
+  background-image: url("../../img/mail.svg");
+  background-repeat: no-repeat;
+  background-size: 43%;
+  background-position: center;
+  cursor: pointer;
 }
 
 .mail_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
+  background-color: $transparent;
 }
 
 .settings_btn {
-    background-image: url("../../img/settings.svg");
-    background-repeat: no-repeat;
-    background-size: 43%;
-    background-position: center;
-    cursor: pointer;
+  background-image: url("../../img/settings.svg");
+  background-repeat: no-repeat;
+  background-size: 43%;
+  background-position: center;
+  cursor: pointer;
 }
 
 .settings_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
+  background-color: $transparent;
 }
 
 .info_btn {
-    background-image: url("../../img/info.svg");
-    background-repeat: no-repeat;
-    background-size: 17%;
-    background-position: 50% 65%;
-    cursor: pointer;
+  background-image: url("../../img/info.svg");
+  background-repeat: no-repeat;
+  background-size: 17%;
+  background-position: 50% 65%;
+  cursor: pointer;
 }
 
 .info_btn:hover {
-    background-color: rgba(255,255,255, 0.3);
+  background-color: $transparent;
+}
+
+.info {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 13px;
+  position: absolute;
+  top: 52px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.dashboard_navigation {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
