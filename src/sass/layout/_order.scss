@@ -5,8 +5,12 @@
   position: relative;
   padding: 30px 45px;
   border-radius: 0px 50px 50px 50px;
-  height: 330px;
-  grid-area: order;
+  height: 500px;
+
+  @include sm {
+    height: 330px;
+  }
+
 }
 
 .disable-scrollbars {
@@ -14,18 +18,25 @@
   -ms-overflow-style: none;
 }
 
+.orderlist {
+  position: relative;
+  margin-top: 25px;
+  overflow-y: scroll;
+  height: 250px !important;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+
+  @include rwd(1200) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
 .Orders h3 {
   color: $blue;
   letter-spacing: 1px;
-}
-
-.orderlist {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 30px;
-  height: 250px;
-  overflow-y: scroll;
 }
 
 .order-card {
@@ -60,12 +71,12 @@
   margin-left: 15px;
 }
 
-.overlay_orders {
-  width: 90%;
-  height: 70%;
-  position: absolute;
-  z-index: 100;
-  -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
-  background: rgb(91, 90, 132);
-  background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
-}
+// .overlay_orders {
+//   width: 90%;
+//   height: 70%;
+//   position: absolute;
+//   z-index: 100;
+//   -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
+//   background: rgb(91, 90, 132);
+//   background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
+// }

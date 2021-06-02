@@ -17,18 +17,26 @@ export default function Header({ foobar }) {
 
   let closingHours = (hours < 10 ? "0" : "") + hours;
   let closingMinutes = (minutes < 10 ? "0" : "") + minutes;
+  let openHours = "Closing in " + closingHours + " hours and " + closingMinutes + " minutes";
+
+  if (hours < 1 && minutes < 1) {
+    openHours = "Closed";
+  }
 
   return (
     <header>
-      <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
-      <div className="info closingTime">
-        Closing in {closingHours} hours {closingMinutes} minutes
+      <div className="nav_logo_time">
+        <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
+        <div className="info closingTime">
+          {openHours}
+        </div>
       </div>
       <div className="dashboard_navigation">
         <button className="notification_btn"></button>
         <button className="mail_btn"></button>
         <button className="settings_btn"></button>
         <button className="info_btn"></button>
+        <button className="nav_btn"></button>
       </div>
     </header>
   );

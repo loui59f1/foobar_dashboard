@@ -2,13 +2,15 @@
 @use "sass/abstracts/variables";
 
 .Storage {
-  padding: 15px;
+  padding: 25px;
+  padding-top: 0;
 
   @include lg {
     display: grid;
     grid-template-columns: 0.6fr 1fr;
     grid-gap: 3em;
-    padding: 0 25px;
+    padding: 2.5em 45px;
+    margin-bottom: 25px;
   }
 
   @include xl {
@@ -27,19 +29,15 @@
   border-radius: 50px 50px 0px 50px;
   padding: 30px 45px;
 
-  @include sm {
-  }
   @include lg {
     height: 300px;
     max-height: 300px;
     height: 100%;
-  }
-  @include xl {
+    margin-bottom: 0px;
   }
 }
 
 .storage_list {
-  padding-bottom: 150px;
   overflow-y: scroll;
 
   @include lg {
@@ -74,6 +72,14 @@
   height: 300px;
   padding-top: 60px;
   padding-bottom: 0px;
+
+  @include sm {
+    margin-top: 2em;
+  }
+
+  @include lg {
+    margin-top: 0em;
+  }
 }
 
 .StorageTapBeer {
@@ -89,9 +95,11 @@
 }
 
 .amounts {
-  position: absolute;
-  top: 0.7em;
-  right: -10px;
+  @include sm {
+    position: absolute;
+    top: 0.7em;
+    right: -10px;
+  }
 }
 
 .amountbox {

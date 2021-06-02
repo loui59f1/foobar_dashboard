@@ -1,50 +1,54 @@
-// Importing the variable stylesheet
+// Importing the variable stylesheets
 @use "sass/abstracts/variables";
 
 body {
-  background: radial-gradient(circle, #33325F 62%, #12112E 100%);
+  background: radial-gradient(circle, #33325f 62%, #12112e 100%);
   //background-image: url("../img/gradient_bg.jpg");
   background-size: cover;
   font-family: "Quicksand", sans-serif;
   color: #fff;
+  overflow-y: hidden;
   font-size: 0.9em;
 }
 
 .Dashboard {
+  display: block;
   padding: 60px 25px;
+  padding-bottom: 0;
 
-  // 576px window width and more
-  @include sm {
+  @include rwd(1000) {
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 48% 48%;
-    grid-template-areas:
-      "order order"
-      "bartender kpi";
-    grid-gap: 4%;
-    //margin-bottom: 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2.5em;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
-  // 992px window width and more
-  @include lg {
-    padding: 25px;
+  @include rwd(997) {
+    padding-top: 30px;
   }
 
-  // 1200px+
-  @include xl {
-    grid-template-columns: 47% 24% 24%;
-    grid-template-areas: "order bartender kpi";
-    grid-gap: 2.5%;
+  @include rwd(1500) {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  @include rwd(1600) {
+    grid-template-columns: 2.5fr 1fr 1fr;
   }
 }
 
 .card {
   background-color: $transparent;
   backdrop-filter: blur(50px);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  // border-radius: 40px;
 
   @include sm {
-    margin-bottom: 0px;
+    margin-bottom: 35px;
+  }
+  
+  @include rwd(1000) {
+    margin-bottom: 0;
   }
 }
 

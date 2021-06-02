@@ -27,7 +27,7 @@ export default function KPINumbers({ queue, serving, beersServed, totalAmount, c
     <div className="KPI card">
       <h1>KPI</h1>
       <div className="kpi_date">
-        <p>{date} - {month < 10 ? `0${month}` : `${month}`} - {year}</p>
+        <p>0{date} - {month < 10 ? `0${month}` : `${month}`} - {year}</p>
       </div>
       <div className="row">
         <div className="sales_day">
