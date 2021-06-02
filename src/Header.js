@@ -20,9 +20,11 @@ export default function Header({ foobar }) {
 
   return (
     <header>
-      <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
-      <div className="info closingTime">
-        Closing in {closingHours} hours {closingMinutes} minutes
+      <div className="nav_logo_time">
+        <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
+        <div className="info closingTime">
+          Closing in {closingHours} hours {closingMinutes} minutes
+        </div>
       </div>
       <div className="dashboard_navigation">
         <button className="notification_btn"></button>

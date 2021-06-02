@@ -2,14 +2,53 @@
 @use "sass/abstracts/variables";
 
 header {
-  padding: 40px;
+  padding: 20px 5px;
   padding-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include sm {
+    padding: 40px;
+    padding-bottom: 25px;
+  }
 }
 
 .logo {
   width: 100px;
   display: inline-block;
   margin-left: 10px;
+}
+
+.info {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+  padding-top: 12px;
+
+  @include sm {
+    position: absolute;
+    top: 52px;
+    padding-top: 0px;
+  }
+}
+
+.dashboard_navigation {
+  @include sm {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+}
+
+.nav_logo_time {
+  display: flex;
+  margin-bottom: 10px;
+
+  @include sm {
+    display: block;
+  }
 }
 
 .notification_btn {
@@ -58,20 +97,4 @@ header {
 
 .info_btn:hover {
   background-color: $transparent;
-}
-
-.info {
-  display: inline-block;
-  margin-left: 25px;
-  font-size: 13px;
-  position: absolute;
-  top: 52px;
-  opacity: 0.8;
-  letter-spacing: 0.5px;
-}
-
-.dashboard_navigation {
-  position: absolute;
-  top: 40px;
-  right: 40px;
 }
