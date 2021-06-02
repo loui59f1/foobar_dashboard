@@ -2,10 +2,19 @@
 @use "sass/abstracts/variables";
 
 .Storage {
-  display: grid;
-  grid-template-columns: 0.4fr 1fr;
-  grid-gap: 3em;
-  padding: 0 40px;
+  padding: 15px;
+
+  @include lg {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    grid-gap: 3em;
+    padding: 0 25px;
+  }
+
+  @include xl {
+    grid-template-columns: 0.4fr 1fr;
+    grid-gap: 3em;
+  }
 }
 
 .StorageBeer {
@@ -15,29 +24,41 @@
 }
 
 .StorageList {
-  max-height: 300px;
   border-radius: 50px 50px 0px 50px;
   padding: 30px 45px;
-  height: 300px;
-  height: 100%;
-  position: relative;
-}
 
-.overlay_storage {
-  width: 83%;
-  height: 82%;
-  position: absolute;
-  z-index: 100;
-  -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
-  background: rgb(91, 90, 132);
-  background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
+  @include sm {
+  }
+  @include lg {
+    height: 300px;
+    max-height: 300px;
+    height: 100%;
+  }
+  @include xl {
+  }
 }
 
 .storage_list {
   padding-bottom: 150px;
   overflow-y: scroll;
-  height: 160px;
+
+  @include lg {
+    height: 160px;
+    padding-bottom: 150px;
+  }
 }
+
+// .overlay_storage {
+//   @include xl {
+//     width: 83%;
+//     height: 82%;
+//     position: absolute;
+//     z-index: 100;
+//     -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
+//     background: rgb(91, 90, 132);
+//     background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
+//   }
+// }
 
 .StorageBeer h3 {
   margin: 0;

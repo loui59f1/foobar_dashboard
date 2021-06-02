@@ -11,16 +11,41 @@ body {
 }
 
 .Dashboard {
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr;
-  grid-gap: 3em;
-  margin-bottom: 3em;
+  padding: 0px 15px;
+
+  // 576px window width and more
+  @include sm {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 48% 48%;
+    grid-template-areas:
+      "order order"
+      "bartender kpi";
+    grid-gap: 4%;
+    //margin-bottom: 2em;
+  }
+
+  // 992px window width and more
+  @include lg {
+    padding: 25px;
+  }
+
+  // 1200px+
+  @include xl {
+    grid-template-columns: 47% 24% 24%;
+    grid-template-areas: "order bartender kpi";
+    grid-gap: 2.5%;
+  }
 }
 
 .card {
   background-color: $transparent;
   backdrop-filter: blur(50px);
+  margin-bottom: 20px;
+
+  @include sm {
+    margin-bottom: 0px;
+  }
 }
 
 .extracolumn {
