@@ -22,7 +22,7 @@ export default function Header({ foobar }) {
     <header>
       <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
       <div className="info closingTime">
-        Closing in {closingHours} h {closingMinutes} min
+        Closing in {closingHours} hours {closingMinutes} minutes
       </div>
       <div className="dashboard_navigation">
         <button className="notification_btn"></button>

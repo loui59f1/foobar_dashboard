@@ -5,8 +5,8 @@
 
 body {
     background: radial-gradient(circle, #3E3D6E 82%, #25234A 100%);
-    // background-image: url("../img/gradient_bg.jpg");
-    // background-size: cover;
+    background-image: url("../img/gradient_bg.jpg");
+    background-size: cover;
     font-family: 'Quicksand', sans-serif;
     color: #fff;
     font-size: 0.9em;
@@ -158,9 +158,24 @@ body {
     position: relative;
   }
 
-  .overlay {
-    position: relative;
+  .overlay_orders {
+    width: 90%;
+    height: 70%;
+    position: absolute;
+    z-index: 100;
     -webkit-mask-image: -webkit-gradient(linear,left 20%,left bottom,from(rgba(37, 35, 74, 1)),to(rgba(37, 35, 74, 0.9)));
+    background: rgb(91,90,132);
+    background: linear-gradient(365deg, rgba(91,90,132,1) 0%, rgba(255,255,255,0) 43%);
+  }
+
+  .overlay_storage {
+    width: 83%;
+    height: 82%;
+    position: absolute;
+    z-index: 100;
+    -webkit-mask-image: -webkit-gradient(linear,left 20%,left bottom,from(rgba(37, 35, 74, 1)),to(rgba(37, 35, 74, 0.9)));
+    background: rgb(91,90,132);
+    background: linear-gradient(365deg, rgba(91,90,132,1) 0%, rgba(255,255,255,0) 43%);
   }
 
   .storage_list {

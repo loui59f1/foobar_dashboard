@@ -11,7 +11,8 @@ export default function Storage({ storage, taps }) {
     <div className="Storage">
       <div className="StorageList card">
         <div className="storage_list disable-scrollbars">
-          <div className="overlay">{storageList}</div>
+          <div className="overlay_storage"></div>
+          {storageList}
         </div>
       </div>
       <div className="TabList card disable-scrollbars">
