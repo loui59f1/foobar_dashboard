@@ -2,14 +2,16 @@
 @use "sass/abstracts/variables";
 
 header {
-  padding: 40px;
+  padding: 40px 40px 25px;
   padding-bottom: 25px;
 }
 
 .logo {
   width: 100px;
   display: inline-block;
-  margin-left: 10px;
+  position: absolute;
+  top: 35px;
+  left: 45px;
 }
 
 .notification_btn {
