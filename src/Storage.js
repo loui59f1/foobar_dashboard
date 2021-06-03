@@ -1,11 +1,16 @@
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import StorageBeer from "./StorageBeer.js";
 import StorageTapBeer from "./StorageTapBeer.js";
 
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+
+
 export default function Storage({ storage, taps }) {
+
   const storageList = storage.map(beer => (
     <StorageBeer beer={beer} key={beer.name} />
   ));
-  const tapList = taps.map(tap => <StorageTapBeer tap={tap} key={tap.id} />);
+  const tapList = taps.map(tap => <SplideSlide key={tap.id}><div class="splide__slide__container"><StorageTapBeer tap={tap} key={tap.id} /></div></SplideSlide>);
 
   // Vi får fejl i konsollen pga. den ikke kan finde storage og taps til at starte med
 
@@ -18,7 +23,15 @@ export default function Storage({ storage, taps }) {
       </div>
       <div className="tablist card disable-scrollbars">
         {/* <h1>Taps</h1> */}
-        <div className="taplist">{tapList}</div>
+        <Splide options={{
+          rewind: true,
+          perPage: 5,
+          perMove: 2,
+          gap: '1rem',
+        }} onMoved={(splide, newIndex) => { console.log('moved', newIndex) }}
+        >>
+          {tapList}
+        </Splide>
       </div>
     </div>
   );

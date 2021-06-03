@@ -33,7 +33,7 @@ export default function Header({ foobar }) {
   return (
     <header>
       <div className="nav_logo_time">
-        <img src={`img/foobar_logo.svg`} className="logo" alt="Logo" />
+        <img src={`img/foobar_logo.png`} className="logo" alt="Logo" />
         <div className="info closingtime">{openHours}</div>
       </div>
       <div className="dashboard_navigation">
