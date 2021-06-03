@@ -1,4 +1,6 @@
 function BartenderRow({ bartender }) {
+
+  // Bartender serving ID
   let bartenderServing = "";
   if (bartender.servingCustomer === null) {
     bartenderServing = "";
@@ -6,7 +8,7 @@ function BartenderRow({ bartender }) {
     bartenderServing = "#" + bartender.servingCustomer;
   }
 
-  // Burde minifyes og uppercase/lowercase
+  // Bartender status
 
   let bartenderStatusDetail = "";
   if (bartender.statusDetail === "reserveTap") {
@@ -23,6 +25,8 @@ function BartenderRow({ bartender }) {
     bartenderStatusDetail = "Replacing keg";
   }
 
+  // Bartender status icon
+
   let bgColorStatus = "#00B818";
 
   if (bartender.status === "WORKING") {
@@ -31,6 +35,8 @@ function BartenderRow({ bartender }) {
     bgColorStatus = "#807EBE";
     bartenderStatusDetail = "Ready";
   }
+
+  // Bartender tap status
 
   let tapStatus = "";
   if (bartender.usingTap === 0 || bartender.usingTap === null) {

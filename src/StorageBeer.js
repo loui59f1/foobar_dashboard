@@ -1,4 +1,6 @@
 function StorageBeer({ beer }) {
+
+  // Calculating how many times (amount) a box is shown
   const totalItems = beer.amount;
 
   const items = new Array(totalItems).fill(null);

@@ -1,4 +1,7 @@
 export default function Header({ foobar }) {
+
+  // Closing time countdown
+
   let today = new Date(foobar.timestamp);
   let todayDate = today.getDate();
   let todayMonth = today.getMonth() + 1;

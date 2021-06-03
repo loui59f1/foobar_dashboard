@@ -1,8 +1,22 @@
 import { VictoryPie, VictoryLabel } from "victory";
 import React from "react";
 
+// let color1 = "#0a0a0a";
+// let color2 = "#ebebeb";
+
+// if (bartender.status === "WORKING") {
+//   bgColorStatus = "#94ECE0";
+// } else {
+//   bgColorStatus = "#807EBE";
+//   bartenderStatusDetail = "Ready";
+// }
+
 function StorageTapBeer({ tap }) {
+
+  // Calculate the percentage of level in tap
+
   const percentage = (tap.level * 100) / tap.capacity;
+
   return (
     <div className="StorageTapBeer">
       <h3>{tap.beer}</h3>
@@ -21,7 +35,6 @@ class DiagramStorageData extends React.Component {
             duration: 2000,
           }}
           padAngle={0}
-          // used to hide labels
           labelComponent={<VictoryLabel verticalanchor="middle" />}
           innerRadius={70}
           width={200}

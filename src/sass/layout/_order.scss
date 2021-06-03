@@ -22,14 +22,19 @@
   position: relative;
   margin-top: 25px;
   overflow-y: scroll;
-  height: 250px !important;
+  height: auto !important;
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
+  grid-template-columns: 1fr;
+  height: 500px;
+
+  @include rwd(600) {
+    grid-template-columns: 1fr 1fr;
+  }
 
   @include rwd(1200) {
     grid-template-columns: 1fr 1fr 1fr;
+    height: 250px !important;
   }
 
 }
