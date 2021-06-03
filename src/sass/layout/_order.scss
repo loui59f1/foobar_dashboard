@@ -1,7 +1,7 @@
 // Importing the variable stylesheet
-@use "sass/abstracts/variables";
+@import "../abstracts/variables";
 
-.Orders {
+.orders {
   position: relative;
   padding: 30px 45px;
   border-radius: 0px 50px 50px 50px;
@@ -10,7 +10,6 @@
   @include sm {
     height: 330px;
   }
-
 }
 
 .disable-scrollbars {
@@ -36,10 +35,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     height: 250px !important;
   }
-
 }
 
-.Orders h3 {
+.orders h3 {
   color: $blue;
   letter-spacing: 1px;
 }

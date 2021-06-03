@@ -1,5 +1,5 @@
 // Importing the variable stylesheets
-@use "sass/abstracts/variables";
+@import "../abstracts/variables";
 
 body {
   background: radial-gradient(circle, #33325f 62%, #12112e 100%);
@@ -10,7 +10,7 @@ body {
   font-size: 0.9em;
 }
 
-.Dashboard {
+.dashboard {
   display: block;
   padding: 60px 25px;
   padding-bottom: 0;
@@ -45,7 +45,7 @@ body {
   @include sm {
     margin-bottom: 35px;
   }
-  
+
   @include rwd(1000) {
     margin-bottom: 0;
   }

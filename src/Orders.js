@@ -5,14 +5,16 @@ export default function Orders({ queue }) {
   const [queueLength, setQueueLength] = useState(0);
 
   return (
-    <div className="Orders card">
+    <div className="orders card">
       <h1>Orders</h1>
       <div className="order_queue">
-        <p>In queue <span className="queue_number">{queue.length}</span></p>
+        <p>
+          In queue <span className="queue_number">{queue.length}</span>
+        </p>
       </div>
       <div className="overlay_orders"></div>
       <div className="orderlist disable-scrollbars">
-        {queue.map((orders) => {
+        {queue.map(orders => {
           const copyResult = {};
           orders.order.map(function (beer) {
             copyResult[beer] = (copyResult[beer] || 0) + 1;
@@ -21,9 +23,17 @@ export default function Orders({ queue }) {
 
           function checkQueueLength() {
             if (queueLength < queue.length || queueLength === 1) {
-              gsap.fromTo(".order-card", { opacity: 0 }, { opacity: 1, duration: 2 });
+              gsap.fromTo(
+                ".order-card",
+                { opacity: 0 },
+                { opacity: 1, duration: 2 }
+              );
             } else {
-              gsap.fromTo(".order-card", { opacity: 0.2 }, { opacity: 1, duration: 1 });
+              gsap.fromTo(
+                ".order-card",
+                { opacity: 0.2 },
+                { opacity: 1, duration: 1 }
+              );
             }
             setQueueLength(queue.length);
           }

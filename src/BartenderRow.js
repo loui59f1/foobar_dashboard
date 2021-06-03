@@ -1,5 +1,4 @@
 function BartenderRow({ bartender }) {
-
   // Bartender serving ID
   let bartenderServing = "";
   if (bartender.servingCustomer === null) {
@@ -46,7 +45,7 @@ function BartenderRow({ bartender }) {
   }
 
   return (
-    <div className="BartenderRow">
+    <div className="bartender-row">
       <div className="bartender_img">
         <img src={`./img/icon_bartender.svg`} alt="Bartender" />
         <div

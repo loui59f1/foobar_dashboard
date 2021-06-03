@@ -1,5 +1,6 @@
 // Importing the variable stylesheet
-@use "sass/abstracts/variables","sass/abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
 
 header {
   padding: 40px 40px 25px;
@@ -41,7 +42,6 @@ header {
     padding-top: 0px;
     left: 165px;
   }
-
 }
 
 .dashboard_navigation {
@@ -71,7 +71,7 @@ header {
   background-position: center;
   cursor: pointer;
   display: none;
-  
+
   @include rwd(600) {
     display: inline-block;
   }
@@ -88,7 +88,7 @@ header {
   background-position: center;
   cursor: pointer;
   display: none;
-  
+
   @include rwd(600) {
     display: inline-block;
   }
@@ -105,7 +105,7 @@ header {
   background-position: center;
   cursor: pointer;
   display: none;
-  
+
   @include rwd(600) {
     display: inline-block;
   }
@@ -122,7 +122,7 @@ header {
   background-position: 50% 65%;
   cursor: pointer;
   display: none;
-  
+
   @include rwd(600) {
     display: inline-block;
   }
@@ -139,7 +139,7 @@ header {
   background-position: center;
   cursor: pointer;
   display: block;
-  
+
   @include rwd(600) {
     display: none;
   }
