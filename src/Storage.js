@@ -12,8 +12,6 @@ export default function Storage({ storage, taps }) {
   ));
   const tapList = taps.map(tap => <SplideSlide key={tap.id}><div class="splide__slide__container"><StorageTapBeer tap={tap} key={tap.id} /></div></SplideSlide>);
 
-  // Vi får fejl i konsollen pga. den ikke kan finde storage og taps til at starte med
-
   return (
     <div className="storage">
       <div className="storagelist card">
