@@ -11,6 +11,10 @@ body {
   // 130% zoom test
   max-width: 100%;
   margin: auto;
+
+  @include rwd(1800){
+    overflow-y: hidden;
+  }
 }
 
 .dashboard {

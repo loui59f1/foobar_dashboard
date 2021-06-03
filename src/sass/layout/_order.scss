@@ -26,15 +26,15 @@
   grid-gap: 30px;
   grid-template-columns: 1fr;
   height: 300px;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 
   @include rwd(600) {
     grid-template-columns: 1fr 1fr;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
 
-  @include rwd(1200) {
-    grid-template-columns: 1fr 1fr 1fr;
+  @include rwd(1500) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 250px !important;
   }
 }
