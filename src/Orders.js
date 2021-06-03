@@ -5,7 +5,7 @@ export default function Orders({ queue }) {
   const [queueLength, setQueueLength] = useState(0);
 
   return (
-    <div className="Orders card">
+    <div className="orders card">
       <h1>Orders</h1>
       <div className="order_queue">
         <p>In queue <span className="queue_number">{queue.length}</span></p>

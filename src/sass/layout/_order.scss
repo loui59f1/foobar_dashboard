@@ -1,7 +1,7 @@
 // Importing the variable stylesheet
 @use "sass/abstracts/variables";
 
-.Orders {
+.orders {
   position: relative;
   padding: 30px 45px;
   border-radius: 0px 50px 50px 50px;
@@ -26,7 +26,9 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: 1fr;
-  height: 500px;
+  height: 300px;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 
   @include rwd(600) {
     grid-template-columns: 1fr 1fr;
@@ -39,7 +41,7 @@
 
 }
 
-.Orders h3 {
+.orders h3 {
   color: $blue;
   letter-spacing: 1px;
 }
@@ -72,16 +74,8 @@
 .queue_number {
   font-size: 23px;
   color: $blue;
-  font-weight: 500;
+  font-weight: 800;
   margin-left: 15px;
+  position: relative;
+  top: 3px;
 }
-
-// .overlay_orders {
-//   width: 90%;
-//   height: 70%;
-//   position: absolute;
-//   z-index: 100;
-//   -webkit-mask-image: -webkit-gradient(linear, left 20%, left bottom, from(rgba(37, 35, 74, 1)), to(rgba(37, 35, 74, 0.9)));
-//   background: rgb(91, 90, 132);
-//   background: linear-gradient(365deg, rgba(91, 90, 132, 1) 0%, rgba(255, 255, 255, 0) 43%);
-// }

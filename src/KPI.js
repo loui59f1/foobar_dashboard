@@ -96,9 +96,9 @@ export default function KPINumbers({ queue, serving }) {
           <h2>{totalAmount} DKK</h2>
           <p>Sales of the day</p>
         </div>
-        <div className="beers_sold">
-          <h2>{beersServed}</h2>
-          <p>Beers sold today</p>
+        <div className="orders_kpi">
+          <h2>{customersServed}</h2>
+          <p>Orders today</p>
         </div>
       </div>
       <div className="row">
@@ -106,9 +106,9 @@ export default function KPINumbers({ queue, serving }) {
           <h2>{estimatedTime} min</h2>
           <p>Current queue time</p>
         </div>
-        <div className="orders_kpi">
-          <h2>{customersServed}</h2>
-          <p>Orders today</p>
+        <div className="beers_sold">
+          <h2>{beersServed}</h2>
+          <p>Beers sold today</p>
         </div>
       </div>
     </div>

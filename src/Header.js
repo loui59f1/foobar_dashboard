@@ -18,7 +18,7 @@ export default function Header({ foobar }) {
   let hours = Math.floor((countdownCalc % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((countdownCalc % (1000 * 60 * 60)) / (1000 * 60));
 
-  let closingHours = (hours < 10 ? "0" : "") + hours;
+  let closingHours = (hours < 10 ? "" : "") + hours;
   let closingMinutes = (minutes < 10 ? "0" : "") + minutes;
   let openHours = "Closing in " + closingHours + " hours and " + closingMinutes + " minutes";
 
