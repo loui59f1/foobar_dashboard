@@ -24,11 +24,9 @@ export default function Orders({ queue }) {
           function checkQueueLength() {
             //add animation if queLength is less than .length or equal
             if (queueLength < queue.length || queueLength === 1) {
-              gsap.fromTo(".order-card", { opacity: 0 }, { opacity: 1, duration: 2 });
-              console.log("new card");
+              gsap.fromTo(".order-card, div", { opacity: 0 }, { opacity: 1, duration: 2 });
             } else {
               gsap.fromTo(".order-card", { opacity: 0.2 }, { opacity: 1, duration: 2 });
-              console.log("bye card");
             }
 
             //set new queuelength
