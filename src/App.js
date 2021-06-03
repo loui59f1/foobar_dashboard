@@ -9,15 +9,22 @@ import Bartenders from "./Bartenders.js";
 import Storage from "./Storage.js";
 
 function App() {
-  const [foobar, setFoobar] = useState({ storage: [], taps: [], serving: [], queue: [], bartenders: [], bar: [] });
+  const [foobar, setFoobar] = useState({
+    storage: [],
+    taps: [],
+    serving: [],
+    queue: [],
+    bartenders: [],
+    bar: [],
+  });
 
   // Get data with useEffect
 
   useEffect(() => {
     function getData(url) {
       fetch(url)
-        .then((resp) => resp.json())
-        .then((json) => {
+        .then(resp => resp.json())
+        .then(json => {
           setFoobar(json);
           setTimeout(() => {
             getData(url);
@@ -30,7 +37,7 @@ function App() {
   return (
     <div>
       <Header foobar={foobar} />
-      <div className="Dashboard">
+      <div className="dashboard">
         <Orders queue={foobar.queue} />
         <Bartenders bartenders={foobar.bartenders} />
         <KPINumbers serving={foobar.serving} queue={foobar.queue} />

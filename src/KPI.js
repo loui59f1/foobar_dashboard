@@ -1,7 +1,6 @@
 import prices from "./prices.json";
 
 export default function KPINumbers({ queue, serving }) {
-
   let lastIdCounted = 0;
   let beersServed = 0;
   let customersServed = 0;
@@ -12,8 +11,8 @@ export default function KPINumbers({ queue, serving }) {
 
   const allBeer = [];
 
-  queue.forEach((orders) => {
-    orders.order.map((beer) => {
+  queue.forEach(orders => {
+    orders.order.map(beer => {
       allBeer.push(beer);
 
       return allBeer;
@@ -21,7 +20,7 @@ export default function KPINumbers({ queue, serving }) {
   });
 
   function findTotalSales(customer) {
-    customer.order.map((beer) => {
+    customer.order.map(beer => {
       duplicatesResult[beer] = (duplicatesResult[beer] || 0) + 1;
       return duplicatesResult;
     });
@@ -29,28 +28,31 @@ export default function KPINumbers({ queue, serving }) {
       return { value, name: key };
     });
 
-    const allOrders = obj.map((order) => {
+    const allOrders = obj.map(order => {
       // Creating a new object and mapping through matches in prices
-      const priceObject = prices.find((item) => item.name === order.name);
+      const priceObject = prices.find(item => item.name === order.name);
       // Creating a property 'price' with calculated result
       order.price = priceObject.price * order.value;
       return order;
     });
 
-    const totalArr = allOrders.map((beer) => {
+    const totalArr = allOrders.map(beer => {
       const priceObject = beer.price;
 
       return priceObject;
     });
 
-    const totalAmountNumber = totalArr.reduce((previousScore, currentScore, index) => previousScore + currentScore, 0);
+    const totalAmountNumber = totalArr.reduce(
+      (previousScore, currentScore, index) => previousScore + currentScore,
+      0
+    );
 
     totalAmount = totalAmountNumber;
   }
 
   // KPI - Customer served and beers sold today
 
-  serving.forEach((customer) => {
+  serving.forEach(customer => {
     if (customer.id > lastIdCounted) {
       beersServed += customer.order.length;
       customersServed++;
@@ -66,12 +68,12 @@ export default function KPINumbers({ queue, serving }) {
   queueObject.amount = 0;
 
   //map through orders in queue
-  queue.forEach((order) => {
+  queue.forEach(order => {
     queueObject.amount = order.order.length;
     queueObject.count += queueObject.amount;
   });
 
-  serving.forEach((order) => {
+  serving.forEach(order => {
     queueObject.amount = order.order.length;
     queueObject.count += queueObject.amount;
   });
@@ -80,16 +82,18 @@ export default function KPINumbers({ queue, serving }) {
 
   // KPI - Date
 
-  let myCurrentDate = new Date()
+  let myCurrentDate = new Date();
   let date = myCurrentDate.getDate();
   let month = myCurrentDate.getMonth() + 1;
   let year = myCurrentDate.getFullYear();
 
   return (
-    <div className="KPI card">
+    <div className="kpi card">
       <h1>KPI</h1>
       <div className="kpi_date">
-        <p>0{date} - {month < 10 ? `0${month}` : `${month}`} - {year}</p>
+        <p>
+          0{date} - {month < 10 ? `0${month}` : `${month}`} - {year}
+        </p>
       </div>
       <div className="row">
         <div className="sales_day">

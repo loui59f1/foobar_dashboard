@@ -1,5 +1,5 @@
 // Importing the variable stylesheet
-@use "sass/abstracts/variables";
+@import "../abstracts/variables";
 
 .orders {
   position: relative;
@@ -10,7 +10,6 @@
   @include sm {
     height: 330px;
   }
-
 }
 
 .disable-scrollbars {
@@ -38,7 +37,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     height: 250px !important;
   }
-
 }
 
 .orders h3 {

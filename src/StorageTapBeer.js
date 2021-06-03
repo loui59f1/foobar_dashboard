@@ -12,13 +12,12 @@ import React from "react";
 // }
 
 function StorageTapBeer({ tap }) {
-
   // Calculate the percentage of level in tap
 
   const percentage = (tap.level * 100) / tap.capacity;
 
   return (
-    <div className="StorageTapBeer">
+    <div className="storage_tap_beer">
       <h3>{tap.beer}</h3>
       <DiagramStorageData percentage={percentage} />
     </div>

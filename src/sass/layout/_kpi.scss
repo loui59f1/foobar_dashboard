@@ -1,7 +1,7 @@
 // Importing the variable stylesheet
-@use "sass/abstracts/variables";
+@import "../abstracts/variables";
 
-.KPI {
+.kpi {
   padding: 30px 45px;
   border-radius: 50px 50px 50px 0;
   position: relative;
@@ -15,11 +15,11 @@
   }
 }
 
-.KPI h1 {
+.kpi h1 {
   margin-bottom: 25px;
 }
 
-.KPI h2 {
+.kpi h2 {
   color: $blue;
   font-size: 25px;
   margin: 0;
@@ -30,5 +30,5 @@
   right: 45px;
   top: 30px;
   display: inline-block;
-  font-family: 'Jost', sans-serif !important;
+  font-family: "Jost", sans-serif !important;
 }
