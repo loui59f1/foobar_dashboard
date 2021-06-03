@@ -14,7 +14,6 @@ export default function KPINumbers({ queue, serving }) {
   queue.forEach(orders => {
     orders.order.map(beer => {
       allBeer.push(beer);
-
       return allBeer;
     });
   });

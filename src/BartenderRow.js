@@ -29,9 +29,9 @@ function BartenderRow({ bartender }) {
   let bgColorStatus = "#00B818";
 
   if (bartender.status === "WORKING") {
-    bgColorStatus = "#94ECE0";
+    bgColorStatus = "#FFC85B";
   } else {
-    bgColorStatus = "#807EBE";
+    bgColorStatus = "#94ECE0";
     bartenderStatusDetail = "Ready";
   }
 
