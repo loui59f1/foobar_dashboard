@@ -14,7 +14,7 @@ export default function Orders({ queue }) {
       </div>
       <div className="overlay_orders"></div>
       <div className="orderlist disable-scrollbars">
-        {queue.map(orders => {
+        {queue.map((orders) => {
           const copyResult = {};
           orders.order.map(function (beer) {
             copyResult[beer] = (copyResult[beer] || 0) + 1;
@@ -22,23 +22,23 @@ export default function Orders({ queue }) {
           });
 
           function checkQueueLength() {
+            //add animation if queLength is less than .length or equal
             if (queueLength < queue.length || queueLength === 1) {
-              gsap.fromTo(
-                ".order-card",
-                { opacity: 0 },
-                { opacity: 1, duration: 2 }
-              );
+              gsap.fromTo(".order-card", { opacity: 0 }, { opacity: 1, duration: 2 });
+              console.log("new card");
             } else {
-              gsap.fromTo(
-                ".order-card",
-                { opacity: 0.2 },
-                { opacity: 1, duration: 1 }
-              );
+              gsap.fromTo(".order-card", { opacity: 0.2 }, { opacity: 1, duration: 2 });
+              console.log("bye card");
             }
+
+            //set new queuelength
             setQueueLength(queue.length);
           }
 
-          queueLength !== queue.length ? checkQueueLength() : console.log("no");
+          //queuelength state is 0 , check if it has changed
+          if (queueLength !== queue.length) {
+            checkQueueLength();
+          }
 
           return (
             <div className="order-card" key={orders.id}>
